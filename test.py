@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Mar 31 19:42:07 2019
-
-@author: Abdeali
-"""
 import keras
 from keras.models import load_model
 from keras.datasets import mnist
@@ -12,6 +6,7 @@ import numpy as np
 
 # importing and preprocessing the mnist dataset for digit recognition
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
+
 # trainig and testing image data preprocessing
 x_train = x_train.reshape(60000, 784)
 x_train = x_train.astype('float32')
@@ -19,10 +14,12 @@ x_test = x_test.reshape(10000, 784)
 x_test = x_test.astype('float32')
 x_train /= 255
 x_test /= 255
+
 # training and testing label data preprocessing
 y_train = np_utils.to_categorical(y_train, 10)
 y_test = np_utils.to_categorical(y_test, 10)
 
+# Loading the Model that we created by training
 Network = load_model('my_model.h5')
 
 y_pred = Network.predict_classes(x_test)
