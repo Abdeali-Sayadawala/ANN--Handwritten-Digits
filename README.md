@@ -1,4 +1,6 @@
 Artificial Neural Network
 =========================
-#Introduction 
+
+##Introduction 
+
 Here, we make an Artificial Neural Network to predict Handwritten digits by using the Large Dataset Created by MNIST. We create our model using Keras Deep Learning libraries which makes making of a neural network very much easier.
